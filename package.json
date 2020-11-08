@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "@lightsource/bem-block": "^1.0.4"
+  },
+  "name": "@lightsource/lazy-loading",
+  "version": "1.0.0",
+  "main": "lazy-loading.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/light-source/lazy-loading.git"
+  },
+  "author": "LightSource",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/light-source/lazy-loading/issues"
+  },
+  "homepage": "https://github.com/light-source/lazy-loading#readme",
+  "description": "Lazy loading for images, it's using IntersectionObserver or native browser implementation (if available). Supports an image and a picture tag",
+  "keywords": [
+    "lazy",
+    "loading",
+    "images",
+    "image"
+  ]
+}
