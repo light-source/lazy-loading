@@ -153,10 +153,10 @@ class LazyImage extends BemBlock.Class {
 
         let element = this.getElement();
 
-        this._isPicture = "PICTURE" === element.parent.tagName;
+        this._isPicture = "PICTURE" === element.parentElement.tagName;
 
         // load event also work with native browser lazyLoading
-        element.addEventListener('onload', this.onImageLoad.bind(this));
+        element.addEventListener('load', this.onImageLoad.bind(this));
         element.addEventListener(lazyLoadingSettings.event.LOADING, this.onLoading.bind(this));
 
         _lazyLoading.add(this);
@@ -203,9 +203,9 @@ class LazyImage extends BemBlock.Class {
 
         if (this._isPicture) {
 
-            element.parent.querySelectorAll('source').forEach((source) => {
+            element.parentElement.querySelectorAll('source').forEach((source) => {
 
-                let sourceSrcSet = source.getAttribute('data-' + lazyLoadingSettings.data.SRCSET, null, false);
+                let sourceSrcSet = source.getAttribute('data-' + lazyLoadingSettings.data.SRCSET);
 
                 if (!sourceSrcSet) {
 
@@ -219,7 +219,6 @@ class LazyImage extends BemBlock.Class {
 
                 source.setAttribute('srcset', sourceSrcSet);
                 source.removeAttribute('data-' + lazyLoadingSettings.data.SRCSET);
-
 
             });
 
@@ -245,7 +244,7 @@ class LazyImage extends BemBlock.Class {
         }
 
         let element = this.getElement();
-        element.classList.push(lazyLoadingSettings._class.LAZY__LOADED)
+        element.classList.add(lazyLoadingSettings._class.LAZY__LOADED)
         element.dispatchEvent(new Event(lazyLoadingSettings.event.LOADED));
 
     }

@@ -51,11 +51,11 @@ A picture
 ```
 import lazyLoading from '@lightsource/lazy-loading';
 
-lazyLoading.settings.ERROR_CALLBACK = (info) =>{
-     // TODO console.log or something else
+lazyLoading.settings.ERROR_CALLBACK = (info) => {
+    // TODO console.log or something else
+    console.log('lazy loading error', info);
 }
 
 // optional, the default class is 'lazy-loading'
-lazyLoading.setClass('custom-lazy','custom-lazy--loaded');
-
+lazyLoading.setClass('custom-lazy', 'custom-lazy--loaded');
 ```
